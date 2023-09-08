@@ -1,0 +1,55 @@
+<html>
+<body>
+    <div class="login">
+       <h1 style="margin-left:580px;color:red;">FWI Prediction</h1>
+   
+        <!-- Main Input For Receiving Query to our ML -->
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+           <div style='margin-left:500px;width:120px;float:left;color:red;'>Temperature</div>
+           <input type="text" name="Temperature" placeholder="Celsius degrees: 22 to 42" required="required" />
+           <br><br>
+
+           <div style='margin-left:500px;width:120px;float:left;color:red;'>Relative Humidity</div>
+           <input type="text" name="RH" placeholder="%: 21 to 90" required="required" />
+           <br><br>
+
+           <div style='margin-left:500px;width:120px;float:left;color:red;'>Wind speed</div>
+           <input type="text" name="Ws" placeholder="km/h: 6 to 29" required="required" />
+           <br><br>
+
+           <div style='margin-left:500px;width:120px;float:left;color:red;'>Rain</div>
+           <input type="text" name="Rain" placeholder="mm: 0 to 16.8 FWI Components" required="required" />
+           <br><br>
+
+           <div style='margin-left:500px;width:120px;float:left;color:red;'>Fine Fuel Moisture Code</div>
+           <input type="text" name="FFMC" placeholder="FWI system: 28.6 to 92.5" required="required" />
+           <br><br>
+
+           <div style='margin-left:500px;width:120px;float:left;color:red;'>Duff Moisture Code</div>
+           <input type="text" name="DMC" placeholder="FWI system: 1.1 to 65.9" required="required" />
+           <br><br>
+
+           <div style='margin-left:500px;width:120px;float:left;color:red;'>Initial Spread Index</div>
+           <input type="text" name="ISI" placeholder="FWI system: 0 to 18.5" required="required" />
+           <br><br>
+
+           <div style='margin-left:500px;width:120px;float:left;color:red;'>Classes</div>
+           <input type="text" name="Classes" placeholder="Fire : 1 and not Fire : 0" required="required" />
+           <br><br>
+
+           <div style='margin-left:500px;width:120px;float:left;color:red;'>Region</div>
+           <input type="text" name="Region" placeholder="1 : Bejaia Region and 2 : Sidi-Bel Abbes Region" required="required" />
+           <br><br>
+   
+   
+           <div>
+           <center><button style="background:#3630a3;color:white;" type="submit" class="btn btn-primary btn-block btn-large">Predict</button></center>
+           </div>
+
+        </form>
+    
+    <h2 style="margin-left:580px;color:red;">
+       THE FWI prediction is {{result}}
+    </h2>
+   <body>
+</html>
